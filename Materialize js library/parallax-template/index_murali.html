@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>NY State Transportation Projects - Materialize</title>
+
+  <!-- CSS  -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+      <ul id="dropdown1" class="dropdown-content">
+
+      <li><a href="#TotalProjects">Total Projects</a></li>
+      <li><a href="#!">Project Status</a></li>
+      <li><a href="#!">Funding Source</a></li>
+      <li class="divider"></li>
+      <li><a href="#!">News</a></li>
+    </ul>
+
+    <nav>
+      <div class="nav-wrapper">
+          <a href="#" class="brand-logo"><img src="nydot_logo3.png" style="width:6em; height:1.5em" alt="NY DOT logo"></a>
+
+        <ul class="right hide-on-med-and-down">
+          <!-- Dropdown Trigger -->
+          <!-- Dropdown Trigger -->
+          <a class='dropdown-trigger btn' href='#' data-target='dropdown1'>Charts By Region <i class="material-icons right">arrow_drop_down</i></a>
+          <!--<li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Projects</a></li> -->
+        </ul>
+      </div>
+    </nav> 
+
+    <div id="index-banner">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header center teal-text text-darken-2">Analysis of Transportation Projects in New York State</h1>
+            <div class="row center">
+              <h4 class="header col s12 teal-text text-darken-2">Powered by New York State Open Data</h4>
+            </div>
+            <div class="center">
+              <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Data</a>
+              <div class="materalboxed"><img src="NYRegions.jpg" style="width:45em; height:20em" alt="Unsplashed background img 1"></div>
+            </div>
+          </div>
+        </div> 
+      </div>
+  
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">work</i></h2>
+            <h5 class="center">Project Description</h5>
+
+            <p class="light">This project analyzed 2075 records on transportation construction projects in New York State. The specific dataset was  "NYS Transportation Projects in Your Neighborhood" from the Open NY Dataset. CSV versions of the data were accessed from Kaggle.com at:
+                "https://www.kaggle.com/new-york-state/nys-transportation-projects-in-your-neighborhood"</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Questions We Asked?</h5>
+
+            <p class="light">
+                • Is this data providing an indication of a region that might be underinvesting in transportation infrastructure? <br>
+                • Is this region's infrastructure in need of increased investment?</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Data Refresh</h5>
+
+            <p class="light">A JSON file for the same dataset was accessed for an API pull into MongoDB from: https://data.ny.gov/resource/rz8t-4kmq.json
+                <br>To see the raw data powering the visualizations below, please click on the 'GET DATA' button above.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id = "TotalProjects" class="col s12 center">
+      <div class="container">
+          <div class="center">
+            <!--<h5 class="header col s12 light">Project Status By Region</h5>-->
+            <a class="waves-effect waves-dark btn" onclick="$('.tap-target').tapTarget('open')">Open Insight!</a>
+            <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Insight!</a>
+        </div>
+        <div class="materialboxed"><img src="TotalProjects.png" alt="Total Projects By Region"></div>
+        <br><br>
+    </div>
+  </div>
+
+    <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a id="menu1" class="btn btn-floating btn-large cyan pulse">
+          <i class="material-icons">menu</i>
+        </a>
+      </div>
+    
+      <div id = "info1" class="tap-target cyan" data-target="menu1">
+          <div class="tap-target-content white-text">
+            <h5>Insight!</h5>
+            <p class="white-text">Long Island and Hudson Valley were virtually tied for the most number of total projects2 respectively. 
+              They were followed closely by Central New York and Western New York, also virtually tied. New York City has the fewest number of total projects</p>
+          </div>
+    </div>  
+
+    <div id = "ProjectStatus" class="col s12 center">
+        <div class="container">
+            <div class="center">
+                <a class="waves-effect waves-dark btn" onclick="$('.tap-target').tapTarget('open')">Open Insight!</a>
+                <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Insight!</a>
+          </div>
+          <div class="materialboxed"><img src="ProjectStatus.png" alt="Projects Status By Region"></div>
+      </div>
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+          <a id="menu2" class="btn btn-floating btn-large cyan pulse">
+            <i class="material-icons">menu</i>
+          </a>
+      </div>
+      
+        <div id = "info2" class="tap-target cyan" data-target="menu2">
+            <div class="tap-target-content white-text">
+              <h5>Insight!</h5>
+              <p class="white-text">Long Island has the most projects in future development, leading Hudson Valley, 
+                Central & Western New York. New York City has the fewest number of projects in future development. 
+                Southern Tier has the most projects currently in development followed by Western New York, North Country.</p>
+            </div>
+            <br><br>
+      </div>  
+
+      <div id = "ProjectFunding" class="col s12 center">
+          <div class="container">
+              <div class="center">
+                  <a class="waves-effect waves-dark btn" onclick="$('.tap-target').tapTarget('open')">Open Insight!</a>
+                  <a class="waves-effect waves-light btn" onclick="$('.tap-target').tapTarget('close')">Close Insight!</a>
+            </div>
+            <div class="materialboxed"><img src="ProjectFunding.png" alt="Projects Funding By Region"></div>
+        </div>
+        <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a id="menu3" class="btn btn-floating btn-large cyan pulse">
+              <i class="material-icons">menu</i>
+            </a>
+        </div>
+        
+          <div id = "info3" class="tap-target cyan" data-target="menu3">
+              <div class="tap-target-content white-text">
+                <h5>Insight!</h5>
+                <p class="white-text">The majority of funding in each region came from state sources followed by federal funding at roughly the same proportion  
+                  to state funding in each region. Local funding was significantly less than state and federal funding in all regions. 
+                  Long Island and Hudson Valley were numbers 1 and 2 respectively in terms of total funding..</p>
+              </div>
+              <br><br>
+        </div>  
+
+
+   <div class="container">
+    <div class="section">
+      <div class="row">
+        <div class="col s12 center">
+          <h3><i class="mdi-content-send brown-text"></i></h3>
+          <h4>News</h4>
+          <p class="left-align light">New York City’s transit network, neglected and underfunded for decades, is about to get an incredibly expensive shot in the arm.
+              Metropolitan Transportation Authority officials on Monday laid out the broad strokes of a $51.5 billion, five-year capital plan to quickly 
+              modernize the subway system, make 70 more subway stations accessible and revolutionize the way people move throughout the region.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+          <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="background3.jpg" alt="Unsplashed background img 3"></div>
+  </div>
+
+  <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  <script>
+     $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+  </script>
+  <script>
+      $('.dropdown-trigger').dropdown();
+     </script>  
+   
+  <script>
+    $(document).ready(function(){
+      $('.tap-target').tapTarget();
+    });
+  </script>
+  <script>
+      $(document).ready(function(){
+        $('.modal').modal();
+      });
+    </script>
+
+  
+
+  </body>
+</html>
